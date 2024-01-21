@@ -5,7 +5,14 @@
 	font-family: Arial, "MS Trebuchet", sans-serif; 
 }
 
+/* body 설정 */
+body{
+	display: flex;
+	width: 80%;
+	margin: 3rem auto;
+}
+
 /* 그리드 설정 */
 .container {
-	display: grid;
+	
 }
