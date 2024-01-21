@@ -10,9 +10,18 @@ body{
 	display: flex;
 	width: 80%;
 	margin: 3rem auto;
+	background-color: black;
 }
 
 /* 그리드 설정 */
 .container {
+	display: grid;
+	row-gap: 1rem;
+	width: 100%;
+}
+
+.item {
+	color: white;
+	border: solid 1px red;
 	
 }
