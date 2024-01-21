@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+/* 기본적인 폰트 설정 */
+* {
+	font-family: Arial, "MS Trebuchet", sans-serif; 
+}
+
+/* 그리드 설정 */
+.container {
+	display: grid;
+}
