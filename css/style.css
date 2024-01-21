@@ -2,7 +2,7 @@
 
 /* 기본적인 폰트 설정 */
 * {
-	font-family: Arial, "MS Trebuchet", sans-serif; 
+	font-family: Pretendard, "MS Trebuchet", sans-serif; 
 }
 
 /* body 설정 */
@@ -22,6 +22,22 @@ body{
 
 .item {
 	color: white;
-	border: solid 1px red;
-	
+}
+
+#main_info {
+	display: flex;
+	column-gap: 1rem;
+	margin-bottom: 2rem;
+	align-items: baseline;
+}
+
+#main_img {
+	width: 6rem;
+	height: 6rem;
+	background-color: white;
+	border-radius: 100%;
+}
+
+#main_info {
+	font-size: 3rem;
 }
