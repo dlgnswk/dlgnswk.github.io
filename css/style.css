@@ -103,3 +103,16 @@ a {
 	height: 1.1rem;
 	margin-right: 0.5rem;
 }
+
+.links a{
+	color: white;
+}
+
+ul {
+	margin: 0;
+	padding: 0 1rem;
+}
+
+ul > li {
+	line-height: 1.5rem;
+}
