@@ -155,4 +155,9 @@ a {
 	font-size: 1rem;
 }
 
-
+.contact {
+	display: inline-block;
+	color: #99c5f3;
+	font-weight: 500;
+	text-decoration: underline;
+}
