@@ -96,6 +96,13 @@ a {
 	*/
 	margin-top: 3rem;
 	margin-bottom: 1rem;
+	display: flex;
+}
+
+.small_subject > img {
+	width: 2.5rem;
+	height: 2.5rem;
+	margin-right: 0.4rem;
 }
 
 .me_info_between {
