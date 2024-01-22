@@ -16,7 +16,7 @@ body{
 .container {
 	inline-size: 100%;
 	margin: auto;
-	max-inline-size: 50rem;
+	max-inline-size: 40rem;
 	padding: 50px 0;
 	display: grid;
 	row-gap: 1rem;
@@ -42,7 +42,8 @@ body{
 }
 
 #main_info {
-	font-size: 3rem;
+	font-size: 2.7rem;
+	line-height: 3.6rem;
 }
 
 #main_desc span{
@@ -60,15 +61,31 @@ body{
 }
 
 .split_line{
-	border-top: solid 1px #99c5f3;
 	margin: 1rem 0;
 }
 
 .strength{
 	font-size: 1rem;
 	font-weight: 100;
+	line-height: 1.5rem;
 }
 
 .strength > div {
 	maring: 1rem 0;
+}
+
+a {
+	color: #99c5f3;
+	font-weight: 500;
+}
+
+.highlight {
+	color: #99c5f3;
+	font-weight: 500;
+}
+
+.small_subject {
+	color: #99c5f3;
+	font-size: 1.3rem;
+	font-weight: 500;
 }
