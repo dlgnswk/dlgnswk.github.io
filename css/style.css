@@ -131,12 +131,13 @@ a {
 	margin: 3rem 0 0 0;
 }
 
-.stack_content{
-	margin-bottom: 3rem;
+.horz_line_dupl{
+	margin: 0;
 }
 
-body > div > div:nth-child(8) > div:nth-child(5) {
-	margin-bottom: 0rem;
+.exp,
+.stack_content{
+	margin-bottom: 3rem;
 }
 
 .main_subject {
