@@ -92,3 +92,14 @@ a {
 	display: inline-block;
 	margin-bottom: 0.5rem;
 }
+
+.me_info_between {
+	display: flex;
+	align-items: center;
+}
+
+.me_info img {
+	width: 1.1rem;
+	height: 1.1rem;
+	margin-right: 0.5rem;
+}
