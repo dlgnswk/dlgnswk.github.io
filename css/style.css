@@ -7,17 +7,20 @@
 
 /* body 설정 */
 body{
+    -webkit-text-size-adjust: 100%;
 	display: flex;
-	width: 50%;
-	margin: 3rem auto;
 	background-color: black;
 }
 
 /* 그리드 설정 */
 .container {
+	inline-size: 100%;
+	margin: auto;
+	max-inline-size: 50rem;
+	padding: 50px 0;
 	display: grid;
 	row-gap: 1rem;
-	width: 100%;
+	word-break:keep-all;
 }
 
 .item {
@@ -47,11 +50,22 @@ body{
 	color: #99c5f3;
 }
 
-.sub_desc {
+.main_sub_desc {
 	font-size: 2rem;
 	font-weight: 100;
 }
 
-.sub_desc span{
+.main_sub_desc span{
 	font-weight: 600;
+}
+
+.strength{
+	font-size: 1rem;
+	font-weight: 100;
+	border-top: solid 1px #99c5f3;
+	margin: 1rem 0;
+}
+
+.strength > div {
+	maring: 1rem 0;
 }
