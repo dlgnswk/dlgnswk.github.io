@@ -137,17 +137,26 @@ a {
 	font-size: 0.9rem;
 }
 
-.subject{
+.subject {
 	margin: 1rem 0 0.5rem 0;
 	font-size: 1.3rem;
 	font-weight: 500;
 }
 
-.content{
+.content {
 	font-weight: 100;
 	font-size: 0.9rem;
 }
 
+.stack_subject {
+	
+}
+
+.stack_content {
+	
+}
+
+.stack_name,
 .stack_desc {
 	display: inline-block;
 }
