@@ -96,7 +96,6 @@ a {
 	*/
 	margin-top: 3rem;
 	margin-bottom: 1rem;
-	text-decoration: underline;
 }
 
 .me_info_between {
@@ -129,6 +128,7 @@ a {
 	margin: 3rem 0 1rem 0;
 	font-size: 1.8rem;
 	font-weight: 500;
+	text-decoration: underline;
 }
 
 .date {
