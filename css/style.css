@@ -125,8 +125,9 @@ a {
 }
 
 .main_subject {
+	color: #99c5f3;
 	margin: 3rem 0 1rem 0;
-	font-size: 1.8rem;
+	font-size: 1.3rem;
 	font-weight: 500;
 	text-decoration: underline;
 }
