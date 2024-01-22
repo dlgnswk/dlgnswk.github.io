@@ -59,11 +59,14 @@ body{
 	font-weight: 600;
 }
 
+.split_line{
+	border-top: solid 1px #99c5f3;
+	margin: 1rem 0;
+}
+
 .strength{
 	font-size: 1rem;
 	font-weight: 100;
-	border-top: solid 1px #99c5f3;
-	margin: 1rem 0;
 }
 
 .strength > div {
