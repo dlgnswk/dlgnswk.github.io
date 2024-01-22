@@ -104,6 +104,12 @@ a {
 	margin-right: 0.5rem;
 }
 
-.links a{
-	color: white;
+.links_content {
+	line-height: 1.5rem
+}
+
+.links_content > span {
+	display: inline-block;
+	width: 5rem;
+	font-weight: 100;
 }
