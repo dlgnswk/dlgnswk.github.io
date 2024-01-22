@@ -17,7 +17,7 @@ body{
 	inline-size: 100%;
 	margin: auto;
 	max-inline-size: 40rem;
-	padding: 3rem 1rem;
+	padding: 3rem 2rem;
 	display: grid;
 	row-gap: 1rem;
 	word-break:keep-all;
