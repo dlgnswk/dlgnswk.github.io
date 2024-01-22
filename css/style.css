@@ -64,13 +64,13 @@ body{
 	margin: 1rem 0;
 }
 
-.strength{
+.me_info{
 	font-size: 1rem;
 	font-weight: 100;
 	line-height: 1.5rem;
 }
 
-.strength > div {
+.me_info > div {
 	maring: 1rem 0;
 }
 
