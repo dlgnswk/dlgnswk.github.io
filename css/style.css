@@ -198,6 +198,10 @@ a {
 	font-weight: 500;
 }
 
+.first_cotent li {
+	margin-bottom: 0.6rem;
+}
+
 .second_cotent {
 	margin: 0.5rem 0 2rem 0;
 }
