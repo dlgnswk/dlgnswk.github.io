@@ -170,3 +170,9 @@ a {
 	font-weight: 500;
 	text-decoration: underline;
 }
+
+ul {
+	margin: 0;
+	padding-left: 1rem;
+	line-height: 1.5rem;
+}
