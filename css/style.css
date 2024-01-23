@@ -94,7 +94,7 @@ a {
 	line-height: 1rem;
 	padding-right: 1rem;
 	*/
-	margin-top: 3rem;
+	margin-top: 1rem;
 	margin-bottom: 1rem;
 	display: flex;
 	align-items: center;
@@ -201,4 +201,30 @@ a {
 
 .second_cotent_leading {
 	margin: 0.5rem 0 0 0;
+}
+
+.accordion {
+	border: none !important;
+	border-color: rgba(0,0,0,0) !important;
+}
+
+.accordion-item {
+	color: white !important;
+	border-color: rgba(0,0,0,0) !important;
+	border: none !important;
+	border-radius: 0 !important;
+	background-color: rgba(0,0,0,0) !important;
+}
+
+.accordion-header {
+	border: none !important;
+	border-color: rgba(0,0,0,0) !important;
+}
+
+.accordion-button {
+	border: none !important;
+	background-color: rgba(0,0,0,0) !important;
+	color: white !important;
+	border-color: rgba(0,0,0,0) !important;
+	padding: 1rem !important;
 }
