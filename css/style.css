@@ -6,14 +6,14 @@
 }
 
 /* body 설정 */
-body{
+.body_jh {
     -webkit-text-size-adjust: 100%;
 	display: flex;
 	background-color: black;
 }
 
 /* 그리드 설정 */
-.container {
+.container_jh {
 	inline-size: 100%;
 	margin: auto;
 	max-inline-size: 40rem;
@@ -23,7 +23,7 @@ body{
 	word-break:keep-all;
 }
 
-.item {
+.item_jh {
 	color: white;
 }
 
