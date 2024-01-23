@@ -20,6 +20,7 @@ input:focus {
     -webkit-text-size-adjust: 100%;
 	display: flex;
 	background-color: black;
+	padding: 0 !important;
 }
 
 /* 그리드 설정 */
@@ -27,7 +28,7 @@ input:focus {
 	inline-size: 100%;
 	margin: auto;
 	max-inline-size: 40rem;
-	padding: 3rem 3rem;
+	padding: 3rem 2.5rem;
 	display: grid;
 	row-gap: 2rem;
 	word-break:keep-all;
@@ -45,19 +46,23 @@ input:focus {
 }
 
 #main_img img {
-	width: 6.5rem;
-	height: 6.5rem;
+	width: 6rem;
+	height: 6rem;
 	background-color: #99c5f3;
 	border-radius: 100%;
 }
 
 #main_info {
 	font-size: 2rem;
-	line-height: 2.3rem;
+	line-height: 2.1rem;
+}
+
+#main_desc {
+	font-size: 2rem;
 }
 
 #main_desc span{
-	font-weight: 700;
+	font-weight: bolder;
 	color: #99c5f3;
 }
 
