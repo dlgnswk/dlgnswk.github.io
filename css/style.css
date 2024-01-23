@@ -27,7 +27,7 @@ input:focus {
 .container_jh {
 	inline-size: 100%;
 	margin: auto;
-	max-inline-size: 40rem;
+	max-inline-size: 50rem;
 	padding: 3rem 2.5rem;
 	display: grid;
 	row-gap: 2rem;
@@ -249,15 +249,16 @@ a {
 	padding: 1rem !important;
 }
 
-
 textarea:focus {
 	outline: none !important;
 	box-shadow: none !important;
 }
+
 button:focus {
 	outline: none !important;
 	box-shadow: none !important;
 }
+
 input:focus {
 	outline: none !important;
 	box-shadow: none !important;
