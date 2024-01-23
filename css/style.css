@@ -175,7 +175,10 @@ a {
 	margin: 1rem 0;
 	padding-left: 1rem;
 	line-height: 1.5rem;
-	font-weight: bold;
+}
+
+.first_cotent .content {
+	font-weight: 500;
 }
 
 .second_cotent {
