@@ -5,6 +5,16 @@
 	font-family: Pretendard, "MS Trebuchet", sans-serif; 
 }
 
+textarea:focus {
+  outline: none !important;
+}
+button:focus {
+  outline: none !important;
+}
+input:focus {
+  outline: none !important;
+}
+
 /* body 설정 */
 .body_jh {
     -webkit-text-size-adjust: 100%;
@@ -42,7 +52,7 @@
 }
 
 #main_info {
-	font-size: 2.3rem;
+	font-size: 2rem;
 	line-height: 3rem;
 }
 
@@ -54,6 +64,7 @@
 .main_sub_desc {
 	font-size: 1.8rem;
 	font-weight: 100;
+	margin-left: 1rem;
 }
 
 .main_sub_desc span{
@@ -227,4 +238,18 @@ a {
 	color: white !important;
 	border-color: rgba(0,0,0,0) !important;
 	padding: 1rem !important;
+}
+
+
+textarea:focus {
+	outline: none !important;
+	box-shadow: none !important;
+}
+button:focus {
+	outline: none !important;
+	box-shadow: none !important;
+}
+input:focus {
+	outline: none !important;
+	box-shadow: none !important;
 }
