@@ -70,6 +70,7 @@ input:focus {
 	font-size: 1.8rem;
 	font-weight: 100;
 	margin-left: 1rem;
+	line-height: 2rem;
 }
 
 .main_sub_desc span{
