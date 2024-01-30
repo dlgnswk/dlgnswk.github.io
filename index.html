@@ -214,6 +214,24 @@
 							<ul class="second_cotent">
 								<li>
 									<div class="content">입력된 검색어를 DB에서 분류별로 select하여 <span class="highlight">jquery의 autocomplete 수행</span></div>
+									<div class="code_space">
+										$("input#input_destination_search").autocomplete({<br>
+											source:searchResultArr,<br>
+											select: function(event, ui) {<br>
+												$("input#input_destination").val(ui.item.value);<br>
+												// console.log(ui.item.value)<br>
+												$("input[name='lg_name']").val(ui.item.name);<br>
+												$("input[name='lg_area_2']").val(ui.item.area_2);<br>
+												$("input[name='lg_area']").val(ui.item.area);<br>
+												<br>
+												$("div#div_destination_search").hide();<br>
+												return false;<br>
+									        },<br>
+									        focus: function(event, ui) {<br>
+									            return false;<br>
+									        }<br>
+										});
+									</div>
 								</li>
 							</ul>
 							

@@ -318,3 +318,7 @@ input:focus {
 .modalBox img {
 	width: 100%;
 }
+
+.code_space {
+	font-family: consolab;
+}
