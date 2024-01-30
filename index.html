@@ -163,6 +163,7 @@
 							<div class="subject">Technologies Used</div>
 							<div class="content">Java, Spring Framework, Oracle DB, MyBatis, Jsp/servlet, Javascript, CSS, Exerd, Git</div>
 							
+							
 							<div class="subject">Database Architecture</div>
 							<div class="content">Expedia를 모티브로 한 객실 세일즈 플랫폼으로 Oracle SQL 을 사용하였고 판매자 관리, 숙소 등록, 객실 등록, 관리자 승인, 구매자 예약, 게시판 등의 기능을 구현하였습니다.</div>
 							<ul class="first_cotent">
@@ -170,21 +171,28 @@
 									<div class="content">ER Diagram</div>
 								</li>
 							</ul>
-							
 							<div class="content imgC">
 								<img class="project_img img-thumbnail" src="./img/exerd.png">
 							</div>
+							<ul class="second_cotent second_cotent_leading">
+								<li>
+									<div class="content">거의 모든 문자열 데이터에 조회 성능이 좋은 NVARCHAR2,VARCHAR2를 선택하였습니다.</div>
+									<div class="content">유지보수를 고려하여 참조키를 사용해 유연성 및 확장성을 확보하였습니다.</div>
+									<div class="content">제 1 정규화를 통해 중복되는 데이터가 없도록 테이블을 분리하였습니다.</div>
+									<div class="content">기본키는 단일 필드로 구성하여 제 2 정규화에 부합하도록 설계하였습니다.</div>
+									<div class="content">숙소 및 객실 테이블의 경우 제 3정규화를 통해 테이블을 분리하여 종속 관계를 정리하였습니다.</div>
+								</li>
+							</ul>
+							
 							
 							<div class="subject">Description</div>
 							<div class="content">Expedia를 참고하여 Spring Framework를 이용해 MVC pattern 기반의 숙소 예약 및 결제 사이트입니다.</div>
-							
 							<ul class="first_cotent">
 								<li>
 									<div class="content">검색어와 날짜, 인원수를 조회하여 예약 가능한 숙소만 검색하는 기능을 구현하였습니다.</div>
 								</li>
 							</ul>
-							
-							<div>
+							<div class="imgC">
 								<img class="project_img img-thumbnail" src="./img/01_exp_search.png">
 							</div>
 							<ul class="second_cotent">
@@ -193,7 +201,8 @@
 								</li>
 							</ul>
 							
-							<div>
+							
+							<div class="imgC">
 								<img class="project_img img-thumbnail" src="./img/02_exp_search.png">
 							</div>
 							<ul class="second_cotent">
@@ -201,8 +210,7 @@
 									<div class="content">달력 플러그인 <span class="highlight">Flatpickr</span>를 통해 <span class="highlight">현재일 이후의 날짜 범위로 고정</span>하여 문자열로 가져와 value로 저장</div>
 								</li>
 							</ul>
-							
-							<div>
+							<div class="imgC">
 								<img class="project_img img-thumbnail" src="./img/03_exp_search.png">
 							</div>
 							<ul class="second_cotent">
@@ -211,13 +219,13 @@
 								</li>
 							</ul>
 							
+							
 							<ul class="first_cotent leading">
 								<li>
 									<div class="content">검색조건에 맞는 숙소 조회와 여러 조건의 필터(가격, 리뷰, 기능 등) 및 정렬을 적용하여 숙소를 재조회 기능을 구현하였습니다.</div>
 								</li>
 							</ul>
-							
-							<div>
+							<div class="imgC">
 								<img class="project_img img-thumbnail" src="./img/04_exp_list.png">
 							</div>
 							<ul class="second_cotent second_cotent_leading">
@@ -231,13 +239,13 @@
 								</li>
 							</ul>
 							
+							
 							<ul class="first_cotent leading">
 								<li>
 									<div class="content">예약 table에서 로그인 유저의 예약리스트를 select하여 예정된 예약, 완료된 예약, 위시리스트를 조회하는 페이지를 구현하였습니다.</div>
 								</li>
 							</ul>
-							
-							<div>
+							<div class="imgC">
 								<img class="project_img img-thumbnail" src="./img/05_exp_trip.png">
 							</div>
 							<ul class="second_cotent second_cotent_leading">
@@ -255,10 +263,8 @@
 									<div class="content">위시리스트 table에서 <span class="highlight">로그인 유저의 위시리스트를 select</span> 하여 <span class="highlight">최근 insert순으로 정렬</span></div>
 								</li>
 							</ul>
-						<!-- 
-							<div class="subject">Trouble Shooting</div>
-							<div class="content">검색 방식 구현시 이러한 문제가 발생</div>
-						-->		
+							
+							
 						</div>
 					    
 					</div>
