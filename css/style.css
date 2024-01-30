@@ -289,8 +289,8 @@ input:focus {
 
 .modal button {
 	position: absolute;
-	top: 3rem;
-	right: 3rem;
+	top: 1rem;
+	right: 4.2rem;
 	background: transparent;
 	border: 0;
 	color: #ffffff;
@@ -303,18 +303,11 @@ input:focus {
 	left: 50%;
 	transform: translate(-50%, -20%);
 	background-color: #ffffff;
-	width: 30%;
+	width: 90%;
 	height: 30%;
 	text-align: center;
 }
 
 .modalBox img {
 	width: 100%;
-}
-
-.modalBox p {
-	color: #ffffff;
-	background-color: #000;
-	font-size: 2rem;
-	padding: .2rem;
 }
