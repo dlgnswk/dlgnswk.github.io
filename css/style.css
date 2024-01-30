@@ -21,6 +21,7 @@ input:focus {
 	display: flex;
 	background-color: black;
 	padding: 0 !important;
+	-ms-overflow-style: none;
 }
 
 /* 그리드 설정 */
@@ -285,6 +286,11 @@ input:focus {
 	top: 0;
 	left: 0;
 	background-color: rgba(0, 0, 0, 0.3);
+	overflow: auto;
+}
+
+.modal::-webkit-scrollbar {
+	display: none;
 }
 
 .modal button {
