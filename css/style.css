@@ -290,7 +290,7 @@ input:focus {
 .modal button {
 	position: absolute;
 	top: 1rem;
-	right: 4.2rem;
+	right: 3%;
 	background: transparent;
 	border: 0;
 	color: #ffffff;
