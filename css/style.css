@@ -321,12 +321,12 @@ input:focus {
 
 .code_space {
 	font-family: consolas;
-	width: 80%;
+	width: 90%;
 	background-color: #1e1e1e;
-	padding: 1rem 2rem;
+	padding: 1rem 1.5rem;
 	border-radius: 0.5rem;
-	margin: 1rem;
-	font-size: 0.8rem;
+	margin: 0 0 2rem 1.5rem;
+	font-size: 0.7rem;
 }
 
 .tab1 {
