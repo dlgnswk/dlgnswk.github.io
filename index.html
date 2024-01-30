@@ -215,21 +215,68 @@
 								<li>
 									<div class="content">입력된 검색어를 DB에서 분류별로 select하여 <span class="highlight">jquery의 autocomplete 수행</span></div>
 									<div class="code_space">
-										$("input#input_destination_search").autocomplete({<br>
-										&emsp;source:searchResultArr,<br>
-										&emsp;&emsp;select: function(event, ui) {<br>
-										&emsp;&emsp;&emsp;$("input#input_destination").val(ui.item.value);<br>
-										&emsp;&emsp;&emsp;$("input[name='lg_name']").val(ui.item.name);<br>
-										&emsp;&emsp;&emsp;$("input[name='lg_area_2']").val(ui.item.area_2);<br>
-										&emsp;&emsp;&emsp;$("input[name='lg_area']").val(ui.item.area);<br>
-										<br>
-										&emsp;&emsp;&emsp;$("div#div_destination_search").hide();<br>
-										&emsp;&emsp;return false;<br>
-									    &emsp;},<br>
-									    &emsp;focus: function(event, ui) {<br>
-									    &emsp;&emsp;return false;<br>
-									    &emsp;}<br>
-										});
+										$.ajax({
+											<span class="1tab"></span>url:"<%= ctxPath%>/index/destination_search.action",
+											<span class="1tab"></span>data:{"searchWord":searchWord},
+											<span class="1tab"></span>dataType:"json",
+											<span class="1tab"></span>success : function(json){
+												<span class="2tab"></span>var searchResultArr = [];
+												<span class="2tab"></span>if(json.length > 0){
+													<span class="3tab"></span>$.each(json, function(index,item){
+													<span class="4tab"></span>// 호텔 검색결과인 경우
+													<span class="4tab"></span>if(item.lg_name != null){
+													<span class="5tab"></span>searchResultArr.push({
+													<span class="6tab"></span>value: item.lg_name+"("+item.lg_area_2+", "+item.lg_area+", "+item.lg_nation+")",
+													<span class="6tab"></span>name: item.lg_name,
+													<span class="6tab"></span>area_2: item.lg_area_2,
+													<span class="6tab"></span>area: item.lg_area,
+													<span class="6tab"></span>nation: item.nation
+										            <span class="5tab"></span>});
+													<span class="4tab"></span>}
+													<span class="4tab"></span>// 상세도시 검색결과인 경우
+													<span class="4tab"></span>else if(item.lg_area_2 != null){
+													<span class="5tab"></span>searchResultArr.push({
+													<span class="6tab"></span>value: item.lg_area_2+"("+item.lg_area+", "+item.lg_nation+")",
+													<span class="6tab"></span>name: "",
+													<span class="6tab"></span>area_2: item.lg_area_2,
+													<span class="6tab"></span>area: item.lg_area,
+													<span class="7tab"></span>nation: item.nation
+										            <span class="6tab"></span>});
+													<span class="5tab"></span>}
+													<span class="5tab"></span>// 큰 도시 검색결과인 경우
+													<span class="5tab"></span>else{
+													<span class="6tab"></span>searchResultArr.push({
+													<span class="6tab"></span>value: item.lg_area+"("+item.lg_nation+")",
+													<span class="6tab"></span>name: "",
+													<span class="6tab"></span>area_2: "",
+													<span class="6tab"></span>area: item.lg_area,
+													<span class="6tab"></span>nation: item.lg_nation
+										            <span class="5tab"></span>});
+													<span class="4tab"></span>}
+														
+													<span class="3tab"></span>}); // end of $.each(json, function(index,item)
+													<br>
+													<span class="3tab"></span>$("input#input_destination_search").autocomplete({<br>
+													<span class="4tab"></span>source:searchResultArr,<br>
+													<span class="5tab"></span>select: function(event, ui) {<br>
+													<span class="6tab"></span>("input#input_destination").val(ui.item.value);<br>
+													<span class="6tab"></span>$("input[name='lg_name']").val(ui.item.name);<br>
+													<span class="6tab"></span>$("input[name='lg_area_2']").val(ui.item.area_2);<br>
+													<span class="6tab"></span>$("input[name='lg_area']").val(ui.item.area);<br>
+													<br>
+													<span class="6tab"></span>$("div#div_destination_search").hide();<br>
+													<span class="5tab"></span>return false;<br>
+												    <span class="4tab"></span>},<br>
+												    <span class="4tab"></span>focus: function(event, ui) {<br>
+												    <span class="5tab"></span>return false;<br>
+												    <span class="4tab"></span>}<br>
+										<span class="3tab"></span>});
+							
+										<span class="2tab"></span>}// end of if------------------------------------
+												
+										<span class="1tab"></span>}// end of success-----------------------------------
+											
+										});// end of ajax
 									</div>
 								</li>
 							</ul>
