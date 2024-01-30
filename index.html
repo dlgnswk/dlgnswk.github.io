@@ -216,20 +216,19 @@
 									<div class="content">입력된 검색어를 DB에서 분류별로 select하여 <span class="highlight">jquery의 autocomplete 수행</span></div>
 									<div class="code_space">
 										$("input#input_destination_search").autocomplete({<br>
-											source:searchResultArr,<br>
-											select: function(event, ui) {<br>
-												$("input#input_destination").val(ui.item.value);<br>
-												// console.log(ui.item.value)<br>
-												$("input[name='lg_name']").val(ui.item.name);<br>
-												$("input[name='lg_area_2']").val(ui.item.area_2);<br>
-												$("input[name='lg_area']").val(ui.item.area);<br>
-												<br>
-												$("div#div_destination_search").hide();<br>
-												return false;<br>
-									        },<br>
-									        focus: function(event, ui) {<br>
-									            return false;<br>
-									        }<br>
+										&emsp;source:searchResultArr,<br>
+										&emsp;&emsp;select: function(event, ui) {<br>
+										&emsp;&emsp;&emsp;$("input#input_destination").val(ui.item.value);<br>
+										&emsp;&emsp;&emsp;$("input[name='lg_name']").val(ui.item.name);<br>
+										&emsp;&emsp;&emsp;$("input[name='lg_area_2']").val(ui.item.area_2);<br>
+										&emsp;&emsp;&emsp;$("input[name='lg_area']").val(ui.item.area);<br>
+										<br>
+										&emsp;&emsp;&emsp;$("div#div_destination_search").hide();<br>
+										&emsp;&emsp;return false;<br>
+									    &emsp;},<br>
+									    &emsp;focus: function(event, ui) {<br>
+									    &emsp;&emsp;return false;<br>
+									    &emsp;}<br>
 										});
 									</div>
 								</li>

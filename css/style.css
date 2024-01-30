@@ -2,7 +2,7 @@
 
 /* 기본적인 폰트 설정 */
 * {
-	font-family: Pretendard, "MS Trebuchet", sans-serif; 
+	font-family: Pretendard, "MS Trebuchet", sans-serif, consolab; 
 }
 
 textarea:focus {
@@ -320,5 +320,11 @@ input:focus {
 }
 
 .code_space {
-	font-family: consolab;
+	font-family: consolas;
+	width: 80%;
+	background-color: #1e1e1e;
+	padding: 1rem 2rem;
+	border-radius: 0.5rem;
+	margin: 1rem;
+	font-size: 0.8rem;
 }
