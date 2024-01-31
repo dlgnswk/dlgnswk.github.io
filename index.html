@@ -268,7 +268,8 @@
 									</div>
 									
 									<div class="code_space code_desc">
-										<div>검색어 리스트가 대분류(도시), 중분류(세부도시), 소분류(숙소명)으로 구분되어서 list를 구성할 수 있도록 따로 select해서 list를 가져올 수 있도록 별개의 로직으로 구성하였습니다.</div>
+										<div>검색어 리스트가 대분류(도시), 중분류(세부도시), 소분류(숙소명)으로 구분되어서 list를 구성할 수 있도록 따로 select해서 list를 가져올 수 있도록 별개의 로직으로 작성하였습니다.</div>
+										<br>
 										<div>대분류 : 도시명(한국)</div>
 										<div>중분류 : 세부도시명(도시명, 한국)</div>
 										<div>대분류 : 숙소명(세부도시명, 도시명, 한국)</div>
@@ -282,7 +283,16 @@
 							</div>
 							<ul class="second_cotent">
 								<li>
-									<div class="content">달력 플러그인 <span class="highlight">Flatpickr</span>를 통해 <span class="highlight">현재일 이후의 날짜 범위로 고정</span>하여 문자열로 가져와 value로 저장</div>
+									<div class="content">controller 에서 현재, 2일 뒤, 1년 뒤의 날짜를 가져와 달력 플러그인 Flatpickr를 통해 <span class="highlight">예약 가능기간(1년) 및 기본 예약일 설정</span></div>
+									
+									<div class="code_space">
+										<span class="tab0">var dateSelector = document.querySelector('.dateSelector');dateSelector.flatpickr({<span class="comment"> // 아래에서 설정한 기본값을 dateSelector에 뿌려줌</span></span>
+										<span class="tab1">mode: "range",<span class="comment"> // 범위 선택 달력</span></span>
+										<span class="tab1">enable: [{from: "${requestScope.date_map.today_date}", to: "${requestScope.date_map.after_1year_date}"}],<span class="comment"> // controller에서 가져온 오늘, 1년뒤 날짜를 선택가능 범위로 설정</span></span>
+										<span class="tab1">dateFormat: "Y-m-d",</span>
+										<span class="tab1">defaultDate: ["${requestScope.date_map.today_date}", "${requestScope.date_map.after_tommorrow_date}"]<span class="comment"> // 기본 선택 범위를 오늘부터 2일뒤 (3일)로 설정</span></span>
+										<span class="tab0">});</span>
+									</div>
 								</li>
 							</ul>
 							<div class="imgC">
