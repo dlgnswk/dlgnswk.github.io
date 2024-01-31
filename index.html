@@ -232,40 +232,39 @@
 										<span class="tab2">jsonArr.put(jsObj);</span>
 										<span class="tab1">}</span>
 										<span class="tab0">}</span>
-										
-							
-										// 상세 도시 검색 리스트
-										List&lt;Map&lt;String, String&gt;&gt; lg_area_2_List = service.search_lg_area_2_List(searchWord);
-							
-										// 상세 도시 검색결과가 있는경우
-										if(lg_area_2_List != null) {
-											for(Map&lt;String, String&gt; lg_area_2_map : lg_area_2_List) {
-												JSONObject jsObj = new JSONObject();
-												jsObj.put("lg_nation", "한국"); // 국가
-												jsObj.put("lg_area", lg_area_2_map.get("lg_area")); // 큰 도시
-												jsObj.put("lg_area_2", lg_area_2_map.get("lg_area_2")); // 상세 도시
-												
-												jsonArr.put(jsObj);
-											}
-										}
-							
-										// 시설 검색 리스트
-										List&lt;Map&lt;String, String&gt;&gt; lg_name_List = service.search_lg_name_List(searchWord);
-							
-										// 시설 검색결과가 있는경우
-										if(lg_name_List != null) {
-											for(Map&lt;String, String&gt; lg_name_map : lg_name_List) {
-												JSONObject jsObj = new JSONObject();
-												jsObj.put("lg_nation", "한국"); // 국가
-												jsObj.put("lg_area", lg_name_map.get("lg_area")); // 큰 도시
-												jsObj.put("lg_area_2", lg_name_map.get("lg_area_2")); // 상세 도시
-												jsObj.put("lg_name", lg_name_map.get("lg_name")); // 시설 이름
-												
-												jsonArr.put(jsObj);
-											}
-										}
-										
-										return jsonArr.toString();
+										<br>
+										<span class="comment">// 상세 도시 검색 리스트</span>
+										<span class="tab0">List&lt;Map&lt;String, String&gt;&gt; lg_area_2_List = service.search_lg_area_2_List(searchWord);</span>
+										<br>
+										<span class="comment">// 상세 도시 검색결과가 있는경우</span>
+										<span class="tab0">if(lg_area_2_List != null) {</span>
+										<span class="tab1">for(Map&lt;String, String&gt; lg_area_2_map : lg_area_2_List) {</span>
+										<span class="tab2">JSONObject jsObj = new JSONObject();</span>
+										<span class="tab2">jsObj.put("lg_nation", "한국");<span class="comment"> // 국가</span></span>
+										<span class="tab2">jsObj.put("lg_area", lg_area_2_map.get("lg_area"));<span class="comment"> // 큰 도시</span></span>
+										<span class="tab2">jsObj.put("lg_area_2", lg_area_2_map.get("lg_area_2"));<span class="comment"> // 상세 도시</span></span>
+										<br>
+										<span class="tab2">jsonArr.put(jsObj);</span>
+										<span class="tab1">}</span>
+										<span class="tab0">}</span>
+										<br>
+										<span class="comment">// 시설 검색 리스트</span>
+										<span class="tab0">List&lt;Map&lt;String, String&gt;&gt; lg_name_List = service.search_lg_name_List(searchWord);</span>
+										<br>
+										<span class="comment">// 시설 검색결과가 있는경우</span>
+										<span class="tab0">if(lg_name_List != null) {</span>
+										<span class="tab1">for(Map&lt;String, String&gt; lg_name_map : lg_name_List) {</span>
+										<span class="tab2">JSONObject jsObj = new JSONObject();</span>
+										<span class="tab2">jsObj.put("lg_nation", "한국"); //<span class="comment"> 국가</span></span>
+										<span class="tab2">jsObj.put("lg_area", lg_name_map.get("lg_area"));<span class="comment"> // 큰 도시</span></span>
+										<span class="tab2">jsObj.put("lg_area_2", lg_name_map.get("lg_area_2"));<span class="comment"> // 상세 도시</span></span>
+										<span class="tab2">jsObj.put("lg_name", lg_name_map.get("lg_name"));<span class="comment"> // 시설 이름</span></span>
+										<br>		
+										<span class="tab2">jsonArr.put(jsObj);</span>
+										<span class="tab1">}</span>
+										<span class="tab0">}</span>
+										<br>
+										<span class="tab0">return jsonArr.toString();</span>
 									</div>
 								</li>
 							</ul>

@@ -333,6 +333,10 @@ input:focus {
 	font-family: consolas;
 }
 
+.code_space .comment {
+	font-family: Pretendard;
+}
+
 .tab0 {
 	display: block;
 }
