@@ -214,72 +214,74 @@
 							<ul class="second_cotent">
 								<li>
 									<div class="content">입력된 검색어를 DB에서 분류별로 select하여 <span class="highlight">jquery의 autocomplete 수행</span></div>
+									
+									<div class="code_space">
+										$.ajax({<br>
+											<span class="tab1"></span>url:"<%= ctxPath%>/index/destination_search.action",<br>
+											<span class="tab1"></span>data:{"searchWord":searchWord},<br>
+											<span class="tab1"></span>dataType:"json",<br>
+											<span class="tab1"></span>success : function(json){<br>
+												<span class="tab2"></span>var searchResultArr = [];<br>
+												<span class="tab2"></span>if(json.length > 0){<br>
+													<span class="tab3"></span>$.each(json, function(index,item){<br>
+													<span class="tab4"></span>// 호텔 검색결과인 경우<br>
+													<span class="tab4"></span>if(item.lg_name != null){<br>
+													<span class="tab5"></span>searchResultArr.push({<br>
+													<span class="tab6"></span>value: item.lg_name+"("+item.lg_area_2+", "+item.lg_area+", "+item.lg_nation+")",<br>
+													<span class="tab6"></span>name: item.lg_name,<br>
+													<span class="tab6"></span>area_2: item.lg_area_2,<br>
+													<span class="tab6"></span>area: item.lg_area,<br>
+													<span class="tab6"></span>nation: item.nation<br>
+										            <span class="tab5"></span>});<br>
+													<span class="tab4"></span>}<br>
+													<span class="tab4"></span>// 상세도시 검색결과인 경우<br>
+													<span class="tab4"></span>else if(item.lg_area_2 != null){<br>
+													<span class="tab5"></span>searchResultArr.push({<br>
+													<span class="tab6"></span>value: item.lg_area_2+"("+item.lg_area+", "+item.lg_nation+")",<br>
+													<span class="tab6"></span>name: "",<br>
+													<span class="tab6"></span>area_2: item.lg_area_2,<br>
+													<span class="tab6"></span>area: item.lg_area,<br>
+													<span class="tab7"></span>nation: item.nation<br>
+										            <span class="tab6"></span>});<br>
+													<span class="tab5"></span>}<br>
+													<span class="tab5"></span>// 큰 도시 검색결과인 경우<br>
+													<span class="tab5"></span>else{<br>
+													<span class="tab6"></span>searchResultArr.push({<br>
+													<span class="tab6"></span>value: item.lg_area+"("+item.lg_nation+")",<br>
+													<span class="tab6"></span>name: "",<br>
+													<span class="tab6"></span>area_2: "",<br>
+													<span class="tab6"></span>area: item.lg_area,<br>
+													<span class="tab6"></span>nation: item.lg_nation<br>
+										            <span class="tab5"></span>});<br>
+													<span class="tab4"></span>}<br>
+														<br>
+													<span class="tab3"></span>}); // end of $.each(json, function(index,item)<br>
+													<br>
+													<span class="tab3"></span>$("input#input_destination_search").autocomplete({<br>
+													<span class="tab4"></span>source:searchResultArr,<br>
+													<span class="tab5"></span>select: function(event, ui) {<br>
+													<span class="tab6"></span>("input#input_destination").val(ui.item.value);<br>
+													<span class="tab6"></span>$("input[name='lg_name']").val(ui.item.name);<br>
+													<span class="tab6"></span>$("input[name='lg_area_2']").val(ui.item.area_2);<br>
+													<span class="tab6"></span>$("input[name='lg_area']").val(ui.item.area);<br>
+													<br>
+													<span class="tab6"></span>$("div#div_destination_search").hide();<br>
+													<span class="tab5"></span>return false;<br>
+												    <span class="tab4"></span>},<br>
+												    <span class="tab4"></span>focus: function(event, ui) {<br>
+												    <span class="tab5"></span>return false;<br>
+												    <span class="tab4"></span>}<br>
+										<span class="tab3"></span>});<br>
+							
+										<span class="tab2"></span>};<br>
+												
+										<span class="tab1"></span>};<br>
+											
+										});
+									</div>
 								</li>
 							</ul>
-							<div class="code_space">
-								$.ajax({<br>
-									<span class="tab1"></span>url:"<%= ctxPath%>/index/destination_search.action",<br>
-									<span class="tab1"></span>data:{"searchWord":searchWord},<br>
-									<span class="tab1"></span>dataType:"json",<br>
-									<span class="tab1"></span>success : function(json){<br>
-										<span class="tab2"></span>var searchResultArr = [];<br>
-										<span class="tab2"></span>if(json.length > 0){<br>
-											<span class="tab3"></span>$.each(json, function(index,item){<br>
-											<span class="tab4"></span>// 호텔 검색결과인 경우<br>
-											<span class="tab4"></span>if(item.lg_name != null){<br>
-											<span class="tab5"></span>searchResultArr.push({<br>
-											<span class="tab6"></span>value: item.lg_name+"("+item.lg_area_2+", "+item.lg_area+", "+item.lg_nation+")",<br>
-											<span class="tab6"></span>name: item.lg_name,<br>
-											<span class="tab6"></span>area_2: item.lg_area_2,<br>
-											<span class="tab6"></span>area: item.lg_area,<br>
-											<span class="tab6"></span>nation: item.nation<br>
-								            <span class="tab5"></span>});<br>
-											<span class="tab4"></span>}<br>
-											<span class="tab4"></span>// 상세도시 검색결과인 경우<br>
-											<span class="tab4"></span>else if(item.lg_area_2 != null){<br>
-											<span class="tab5"></span>searchResultArr.push({<br>
-											<span class="tab6"></span>value: item.lg_area_2+"("+item.lg_area+", "+item.lg_nation+")",<br>
-											<span class="tab6"></span>name: "",<br>
-											<span class="tab6"></span>area_2: item.lg_area_2,<br>
-											<span class="tab6"></span>area: item.lg_area,<br>
-											<span class="tab7"></span>nation: item.nation<br>
-								            <span class="tab6"></span>});<br>
-											<span class="tab5"></span>}<br>
-											<span class="tab5"></span>// 큰 도시 검색결과인 경우<br>
-											<span class="tab5"></span>else{<br>
-											<span class="tab6"></span>searchResultArr.push({<br>
-											<span class="tab6"></span>value: item.lg_area+"("+item.lg_nation+")",<br>
-											<span class="tab6"></span>name: "",<br>
-											<span class="tab6"></span>area_2: "",<br>
-											<span class="tab6"></span>area: item.lg_area,<br>
-											<span class="tab6"></span>nation: item.lg_nation<br>
-								            <span class="tab5"></span>});<br>
-											<span class="tab4"></span>}<br>
-												<br>
-											<span class="tab3"></span>}); // end of $.each(json, function(index,item)<br>
-											<br>
-											<span class="tab3"></span>$("input#input_destination_search").autocomplete({<br>
-											<span class="tab4"></span>source:searchResultArr,<br>
-											<span class="tab5"></span>select: function(event, ui) {<br>
-											<span class="tab6"></span>("input#input_destination").val(ui.item.value);<br>
-											<span class="tab6"></span>$("input[name='lg_name']").val(ui.item.name);<br>
-											<span class="tab6"></span>$("input[name='lg_area_2']").val(ui.item.area_2);<br>
-											<span class="tab6"></span>$("input[name='lg_area']").val(ui.item.area);<br>
-											<br>
-											<span class="tab6"></span>$("div#div_destination_search").hide();<br>
-											<span class="tab5"></span>return false;<br>
-										    <span class="tab4"></span>},<br>
-										    <span class="tab4"></span>focus: function(event, ui) {<br>
-										    <span class="tab5"></span>return false;<br>
-										    <span class="tab4"></span>}<br>
-								<span class="tab3"></span>});<br>
-					
-								<span class="tab2"></span>};<br>
-										
-								<span class="tab1"></span>};<br>
-									
-								});
-							</div>
+							
 							
 							<div class="imgC">
 								<img class="project_img img-thumbnail" src="./img/02_exp_search.png">
