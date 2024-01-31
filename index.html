@@ -365,6 +365,7 @@
 									<div class="content">추천순(평점, 성급, 가격)을 default로 리뷰많은순, 가격 낮은순, 높은순의 <span class="highlight">정렬 기능 구현</span></div>
 								
 									<div class="code_space">
+										<span class="comment">// Mybatis</span>
 										<span class="tab0">select lodge_id, lg_name, lg_area_2, lg_area</span>
 										<span class="tab0">from</span>
 										<span class="tab0">(</span>
@@ -396,7 +397,7 @@
 									
 									<div class="code_space">
 										<span class="comment">// java script</span>
-										<span class="comment">// 클릭한 체크박스의 호텔등급을 배열로 만들기</span>
+										<span class="tab0 comment">// 클릭한 체크박스의 호텔등급을 배열로 만들기</span>
 										<span class="tab0">$("input.lg_star").click(function(){</span>
 										<span class="tab1">var star_arr = [];</span>
 										<span class="tab1">var star = "";</span>
@@ -414,7 +415,7 @@
 									
 									<div class="code_space">
 										<span class="comment">// controller</span>
-										<span class="comment">// 성급</span>
+										<span class="tab0 comment">// 성급</span>
 										<span class="tab0">if(request.getParameter("lg_star") == null) {</span>
 										<span class="tab1">paraMap.put("lg_star", "");</span>
 										<span class="tab0">}</span>
