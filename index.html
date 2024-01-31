@@ -213,7 +213,7 @@
 							</div>
 							<ul class="second_cotent">
 								<li>
-									<div class="content">ajax를 통해 입력된 검색어를 DB에서 분류별로 select하여 <span class="highlight">jquery의 autocomplete 수행</span></div>
+									<div class="content">ajax를 통해 입력된 검색어를 DB에서 분류별로 select하여 jquery autocomplete 수행해 <span class="highlight">분류별 검색단어 도출</span></div>
 									
 									<div class="code_space">
 										<span class="comment">// 검색 결과가  있는 경우</span>
@@ -265,6 +265,10 @@
 										<span class="tab0">}</span>
 										<br>
 										<span class="tab0">return jsonArr.toString();</span>
+									</div>
+									
+									<div class="code_space code_desc">
+										검색어 리스트가 대분류(도시), 중분류(세부도시), 소분류(숙소명)으로 구분되어서 검색되기를 원했기 때문에 따로 select해서 list를 가져올 수 있도록 별개의 로직으로 구성하였습니다.
 									</div>
 								</li>
 							</ul>
