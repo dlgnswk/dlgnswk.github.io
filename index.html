@@ -286,12 +286,19 @@
 									<div class="content">controller 에서 현재, 2일 뒤, 1년 뒤의 날짜를 가져와 달력 플러그인 Flatpickr를 통해 <span class="highlight">예약 가능기간(1년) 및 기본 예약일 설정</span></div>
 									
 									<div class="code_space">
-										<span class="tab0">var dateSelector = document.querySelector('.dateSelector');dateSelector.flatpickr({<span class="comment"> // 아래에서 설정한 기본값을 dateSelector에 뿌려줌</span></span>
+										<span class="tab0">var dateSelector = document.querySelector('.dateSelector');dateSelector.flatpickr({</span>
+										<span class="tab1 comment"> // 아래에서 설정한 기본값을 dateSelector에 뿌려줌</span>
 										<span class="tab1">mode: "range",<span class="comment"> // 범위 선택 달력</span></span>
-										<span class="tab1">enable: [{from: "${requestScope.date_map.today_date}", to: "${requestScope.date_map.after_1year_date}"}],<span class="comment"> // controller에서 가져온 오늘, 1년뒤 날짜를 선택가능 범위로 설정</span></span>
+										<span class="tab1">enable: [{from: "${requestScope.date_map.today_date}", to: "${requestScope.date_map.after_1year_date}"}],</span>
+										<span class="tab1 comment"> // controller에서 가져온 오늘, 1년뒤 날짜를 선택가능 범위로 설정</span>
 										<span class="tab1">dateFormat: "Y-m-d",</span>
-										<span class="tab1">defaultDate: ["${requestScope.date_map.today_date}", "${requestScope.date_map.after_tommorrow_date}"]<span class="comment"> // 기본 선택 범위를 오늘부터 2일뒤 (3일)로 설정</span></span>
+										<span class="tab1">defaultDate: ["${requestScope.date_map.today_date}", "${requestScope.date_map.after_tommorrow_date}"]</span>
+										<span class="tab1 comment"> // 기본 선택 범위를 오늘부터 2일뒤 (3일)로 설정</span>
 										<span class="tab0">});</span>
+									</div>
+									
+									<div class="code_space code_desc">
+										<div>이전 날짜에는 예약이 불가능하게 설정해야 했기 때문에 범위를 현재부터 1년 뒤의 날짜로 한정하였고 기본 예약일을 현재부터 3일 예약으로 설정하였습니다.</div>
 									</div>
 								</li>
 							</ul>
