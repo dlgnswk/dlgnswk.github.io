@@ -363,6 +363,31 @@
 							<ul class="second_cotent second_cotent_leading">
 								<li>
 									<div class="content">추천순(평점, 성급, 가격)을 default로 리뷰많은순, 가격 낮은순, 높은순의 <span class="highlight">정렬 기능 구현</span></div>
+								
+									<div class="code_space">
+										<span class="tab0">select lodge_id, lg_name, lg_area_2, lg_area</span>
+										<span class="tab0">from</span>
+										<span class="tab0">(</span>
+									    <span class="tab0">&lt;if test='sort == "Recommended"'&gt;</span>
+										<span class="tab1">select L.lodge_id, L.lg_name, L.lg_area_2, L.lg_area, L.lg_hotel_star, L.fk_lodge_type, L.lg_status</span>
+										<span class="tab1">from</span>
+										<span class="tab1">(</span>
+										<span class="tab2">select lodge_id, min_price, nvl(resv_cnt, 0) as resv_cnt</span>
+										<span class="tab2">from</span>
+										<span class="tab3">(select lodge_id, MIN(to_number(rm_price)) AS min_price from tbl_lodge L join tbl_room R on L.lodge_id = R.fk_lodge_id group by lodge_id)</span>
+										<span class="tab2">C</span>
+										<span class="tab2">left join (select fk_lodge_id, count(*) AS resv_cnt from tbl_review group by fk_lodge_id) V</span>
+										<span class="tab2">on C.lodge_id = V.fk_lodge_id</span>
+										<span class="tab1">) P</span>
+										<span class="tab1">left join tbl_lodge L</span>
+										<span class="tab1">on P.lodge_id = L.lodge_id</span>
+										<span class="tab1">order by resv_cnt desc, lg_hotel_star desc, min_price asc</span>
+									    <span class="tab0">&lt;/if&gt;</span>
+									</div>
+									
+									<div class="code_space code_desc">
+										상기 작성한 코드는 default 정렬 방식인 추천순으로 Mybatis를 통해 정렬하여 숙소 list를 가져오도록 하였습니다.
+									</div>
 								</li>
 							</ul>
 							<ul class="second_cotent second_cotent_leading">
