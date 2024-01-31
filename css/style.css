@@ -329,6 +329,10 @@ input:focus {
 	font-size: 0.7rem;
 }
 
+.code_space span {
+	font-family: consolas;
+}
+
 .tab0 {
 	display: block;
 }
@@ -369,6 +373,5 @@ input:focus {
 }
 
 .comment {
-	display: block;
 	color: #839d90;
 }
