@@ -366,6 +366,7 @@
 								
 									<div class="code_space">
 										<span class="comment">// Mybatis</span>
+										<span class="tab0 comment">// 선택된 정렬을 확인하여 일치하는 경우 필요한 조건으로 select하는 query문</span>
 										<span class="tab0">select lodge_id, lg_name, lg_area_2, lg_area</span>
 										<span class="tab0">from</span>
 										<span class="tab0">(</span>
@@ -415,6 +416,7 @@
 									
 									<div class="code_space">
 										<span class="comment">// Mybatis</span>
+										<span class="tab0 comment">// 선택된 성급의 호텔들을 select할 수 있도록 where절에 추가하는 query문</span>
 										<span class="tab0">&lt;if test="lg_star_arr.length != 0"&gt;</span>
 									    <span class="tab1 key_code">and lg_hotel_star in</span>
 									    <span class="tab1 key_code">&lt;foreach collection="lg_star_arr" index="i" open="(" separator="," close=")"&gt;</span>
@@ -441,16 +443,77 @@
 							<ul class="second_cotent second_cotent_leading">
 								<li>
 									<div class="content">예정된 예약의 경우 <span class="highlight">시설별 취소조건을 검증</span>하여 예약 취소와 판매자에게 문의로 구분</div>
+									
+									<div class="code_space">
+										<span class="comment">// Mybatis</span>
+										<span class="tab0 comment">// 해당 예약의 체크인 시간과 현재 시간의 차이가 72시간 이내인지 확인하는 query문</span>
+										<span class="tab0">&lt;select id="checkinTimeConfrim" parameterType="String" resultType="String"&gt;</span>
+										<span class="tab1">select count(*)</span>
+										<span class="tab1">from</span>
+										<span class="tab1">(</span>
+										<span class="tab2">select to_char(to_date((select to_char(rs_checkindate,'yyyy-mm-dd') from tbl_reservation where rs_seq = #{rs_no}) ||' '|| checkin_time,'yyyy-mm-dd hh24:mi:ss') - 3 + 0 + 0 + 0,'yyyy-mm-dd hh24:mi:ss') As checkinBefore72hour</span>
+										<span class="tab2">from</span>
+										<span class="tab2">(</span>
+										<span class="tab3">select fk_h_userid</span>
+										<span class="tab4 key_code">,case when substr(lg_checkin_start_time,7,8) = 'PM' then substr(lg_checkin_start_time,1,2) + 12 || ':00:00' else substr(lg_checkin_start_time,1,2) + 0 ||':00:00' end as checkin_time</span>
+										<span class="tab4 key_code">,case when substr(lg_checkout_time,7,8) = 'PM' then substr(lg_checkout_time,1,2) + 12 || ':00' else substr(lg_checkout_time,1,2) + 0 ||':00' end as checkout_time</span>
+										<span class="tab3">from tbl_lodge</span>
+										<span class="tab2">)</span>
+										<span class="tab2">where 1=1</span>
+										<span class="tab2">and fk_h_userid = (select fk_h_userid from tbl_reservation where rs_seq = #{rs_no})</span>
+										<span class="tab1">)</span>
+										<span class="tab1 key_code">where to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') &lt;![CDATA[ &lt;= ]]&gt; checkinBefore72hour</span>
+										<span class="tab0">&lt;/select&gt;</span>
+									</div>
+									
+									<div class="code_space code_desc">
+										
+									</div>
 								</li>
 							</ul>
 							<ul class="second_cotent second_cotent_leading">
 								<li>
 									<div class="content">예정된 예약을 취소 할 경우 <span class="highlight">status를 변경</span>하여 완료된 예약 섹션에 조회가능하게 설정</div>
+									
+									<div class="code_space">
+										<span class="comment">// Mybatis</span>
+										<span class="tab0 comment">// 예약 상태 변경하는 query문</span>
+										<span class="tab0">&lt;update id="cancelReservation" parameterType="String"&gt;</span>
+										<span class="tab1">update tbl_reservation</span>
+										<span class="tab1 key_code">set rs_cancel = '1'</span>
+										<span class="tab1">where rs_seq = #{rs_no}</span>
+										<span class="tab0">&lt;/update&gt;</span>
+									</div>
+									
+									<div class="code_space">
+										<span class="comment">// Mybatis</span>
+										<span class="tab0 comment">// 예약 리스트를 가져오는 query문 중에서 예약상태가 0인 예약만 가져오는 query문</span>
+										<span class="tab0 comment">// 생략</span>
+										<span class="tab0">select *</span>
+							            <span class="tab0">from tbl_reservation</span>
+							            <span class="tab0">where fk_userid = #{userid}</span>
+							            <span class="tab0">and to_date(rs_checkindate, 'yyyy-mm-dd hh24:mi:ss') &lt;![CDATA[ &gt; ]]&gt; to_date(sysdate, 'yyyy-mm-dd hh24:mi:ss')</span>
+							            <span class="tab0 key_code">and rs_cancel = 0</span>
+							            <span class="tab0">order by rs_date desc</span>
+										<span class="tab0 comment">// 생략</span>
+									</div>
+									
+									<div class="code_space code_desc">
+										일반 예약과 취소된 예약을 구분하기 위해 예약 취소를 delete가 아니라 update로 구현하였습니다.
+									</div>
 								</li>
 							</ul>
 							<ul class="second_cotent second_cotent_leading">
 								<li>
 									<div class="content">위시리스트 table에서 <span class="highlight">로그인 유저의 위시리스트를 select</span> 하여 <span class="highlight">최근 insert순으로 정렬</span></div>
+									
+									<div class="code_space">
+									
+									</div>
+									
+									<div class="code_space code_desc">
+									
+									</div>
 								</li>
 							</ul>
 							
