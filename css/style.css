@@ -338,7 +338,9 @@ input:focus {
 }
 
 .code_desc {
-	
+	font-family: Pretendard;
+	font-size: 0.8rem;
+	line-height: 1.3rem;
 }
 
 .tab0 {
@@ -381,5 +383,5 @@ input:focus {
 }
 
 .comment {
-	color: #839d90;
+	color: #6f8964;
 }
