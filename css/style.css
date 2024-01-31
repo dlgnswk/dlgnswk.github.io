@@ -386,3 +386,7 @@ input:focus {
 .comment {
 	color: #6f8964;
 }
+
+.key_code {
+	color: #99c5f3;
+}

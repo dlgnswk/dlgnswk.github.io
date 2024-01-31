@@ -255,10 +255,10 @@
 										<span class="tab0">if(lg_name_List != null) {</span>
 										<span class="tab1">for(Map&lt;String, String&gt; lg_name_map : lg_name_List) {</span>
 										<span class="tab2">JSONObject jsObj = new JSONObject();</span>
-										<span class="tab2">jsObj.put("lg_nation", "한국"); //<span class="comment"> 국가</span></span>
-										<span class="tab2">jsObj.put("lg_area", lg_name_map.get("lg_area"));<span class="comment"> // 큰 도시</span></span>
-										<span class="tab2">jsObj.put("lg_area_2", lg_name_map.get("lg_area_2"));<span class="comment"> // 상세 도시</span></span>
-										<span class="tab2">jsObj.put("lg_name", lg_name_map.get("lg_name"));<span class="comment"> // 시설 이름</span></span>
+										<span class="tab2 key_code">jsObj.put("lg_nation", "한국"); //<span class="comment"> 국가</span></span>
+										<span class="tab2 key_code">jsObj.put("lg_area", lg_name_map.get("lg_area"));<span class="comment"> // 큰 도시</span></span>
+										<span class="tab2 key_code">jsObj.put("lg_area_2", lg_name_map.get("lg_area_2"));<span class="comment"> // 상세 도시</span></span>
+										<span class="tab2 key_code">jsObj.put("lg_name", lg_name_map.get("lg_name"));<span class="comment"> // 시설 이름</span></span>
 										<br>		
 										<span class="tab2">jsonArr.put(jsObj);</span>
 										<span class="tab1">}</span>
@@ -289,10 +289,10 @@
 										<span class="tab0">var dateSelector = document.querySelector('.dateSelector');dateSelector.flatpickr({</span>
 										<span class="tab1 comment"> // 아래에서 설정한 기본값을 dateSelector에 뿌려줌</span>
 										<span class="tab1">mode: "range",<span class="comment"> // 범위 선택 달력</span></span>
-										<span class="tab1">enable: [{from: "${requestScope.date_map.today_date}", to: "${requestScope.date_map.after_1year_date}"}],</span>
+										<span class="tab1 key_code">enable: [{from: "${requestScope.date_map.today_date}", to: "${requestScope.date_map.after_1year_date}"}],</span>
 										<span class="tab1 comment"> // controller에서 가져온 오늘, 1년뒤 날짜를 선택가능 범위로 설정</span>
 										<span class="tab1">dateFormat: "Y-m-d",</span>
-										<span class="tab1">defaultDate: ["${requestScope.date_map.today_date}", "${requestScope.date_map.after_tommorrow_date}"]</span>
+										<span class="tab1 key_code">defaultDate: ["${requestScope.date_map.today_date}", "${requestScope.date_map.after_tommorrow_date}"]</span>
 										<span class="tab1 comment"> // 기본 선택 범위를 오늘부터 2일뒤 (3일)로 설정</span>
 										<span class="tab0">});</span>
 									</div>
@@ -307,7 +307,7 @@
 							</div>
 							<ul class="second_cotent">
 								<li>
-									<div class="content">성인 0명, 인원 10명 이상의 조건을 <span class="highlight">예외 처리</span>하여  검색조건 설정</div>
+									<div class="content">인원 설정 후 검색하기 위한 여러가지 조건을 <span class="highlight">예외 처리</span>하여  검색조건 설정</div>
 									
 									<div class="code_space">
 										<span class="comment">// 어른 인원수 마이너스하기</span>
@@ -323,7 +323,7 @@
 										<span class="tab2 comment">// 생략</span>
 										<span class="tab2 comment">// 어른 인원수가 1이 된 경우 마이너스 버튼 비활성화</span>
 										<span class="tab2">if(adult_cnt == 1){</span>
-										<span class="tab3">$("button.adult_cnt_minus").addClass("border","solid 1px lightgray");</span>
+										<span class="tab3 key_code">$("button.adult_cnt_minus").addClass("border","solid 1px lightgray");</span>
 										<span class="tab3">return;</span>
 										<span class="tab2">}</span>
 										<span class="tab2 comment">// 어른 인원수와 아동 인원수의 합계가 10 이하인 경우 경고 숨김</span>
@@ -336,9 +336,9 @@
 										<span class="tab2 comment">// 어른 인원수와 아동 인원수의 합계가 10 초과인 경우 경고 보여주기</span>
 										<span class="tab2">else{</span>
 										<span class="tab3">$("div#travler_alert").text("예약 인원은 최소 1인, 최대 10인입니다.");</span>
-										<span class="tab3">$("button[name='btn_travler']").attr("disabled", true);</span>
-										<span class="tab3">$("button[name='btn_travler']").removeClass("btn_travler_ok");</span>
-										<span class="tab3">$("button[name='btn_travler']").addClass("btn_travler_no");</span>
+										<span class="tab3 key_code">$("button[name='btn_travler']").attr("disabled", true);</span>
+										<span class="tab3 key_code">$("button[name='btn_travler']").removeClass("btn_travler_ok");</span>
+										<span class="tab3 key_code">$("button[name='btn_travler']").addClass("btn_travler_no");</span>
 										<span class="tab2">}</span>
 										<span class="tab2 comment">// 생략</span>
 										<span class="tab1">}</span>
@@ -382,7 +382,7 @@
 										<span class="tab1">) P</span>
 										<span class="tab1">left join tbl_lodge L</span>
 										<span class="tab1">on P.lodge_id = L.lodge_id</span>
-										<span class="tab1">order by resv_cnt desc, lg_hotel_star desc, min_price asc</span>
+										<span class="tab1 key_code">order by resv_cnt desc, lg_hotel_star desc, min_price asc</span>
 									    <span class="tab0">&lt;/if&gt;</span>
 									</div>
 									
@@ -403,7 +403,7 @@
 										<span class="tab1">var star = "";</span>
 										<span class="tab1">if($("input.lg_star:checked").length &gt; 0){</span>
 										<span class="tab2">for(var i=0; i&lt;$("input.lg_star:checked").length; i++){</span>
-										<span class="tab3">star_arr.push($("input.lg_star:checked").eq(i).val());</span>
+										<span class="tab3 key_code">star_arr.push($("input.lg_star:checked").eq(i).val());</span>
 										<span class="tab2">}</span>
 										<span class="tab1">}</span>
 										<span class="tab1">star = star_arr.join(",");</span>
@@ -414,29 +414,12 @@
 									</div>
 									
 									<div class="code_space">
-										<span class="comment">// controller</span>
-										<span class="tab0 comment">// 성급</span>
-										<span class="tab0">if(request.getParameter("lg_star") == null) {</span>
-										<span class="tab1">paraMap.put("lg_star", "");</span>
-										<span class="tab0">}</span>
-										<span class="tab0">else {</span>
-										<span class="tab1">paraMap.put("lg_star", String.valueOf(request.getParameter("lg_star")));</span>
-										<span class="tab0">}</span>
-									</div>
-									
-									<div class="code_space">
 										<span class="comment">// Mybatis</span>
 										<span class="tab0">&lt;if test="lg_star_arr.length != 0"&gt;</span>
-									    <span class="tab1">and lg_hotel_star in</span>
-									    <span class="tab1">&lt;foreach collection="lg_star_arr" index="i" open="(" separator="," close=")"&gt;</span>
-									    <span class="tab2">'${lg_star_arr[i]}'</span>
-									    <span class="tab1">&lt;/foreach&gt;</span>
-									    <span class="tab0">&lt;/if&gt;</span>
-										<span class="tab0">&lt;if test="lodge_type_arr.length != 0"&gt;</span>
-									    <span class="tab1">and fk_lodge_type in</span>
-									    <span class="tab1">&lt;foreach collection="lodge_type_arr" index="i" open="(" separator="," close=")"&gt;</span>
-									    <span class="tab2">'${lodge_type_arr[i]}'</span>
-									    <span class="tab1">&lt;/foreach&gt;</span>
+									    <span class="tab1 key_code">and lg_hotel_star in</span>
+									    <span class="tab1 key_code">&lt;foreach collection="lg_star_arr" index="i" open="(" separator="," close=")"&gt;</span>
+									    <span class="tab2 key_code">'${lg_star_arr[i]}'</span>
+									    <span class="tab1 key_code">&lt;/foreach&gt;</span>
 									    <span class="tab0">&lt;/if&gt;</span>
 									</div>
 									
