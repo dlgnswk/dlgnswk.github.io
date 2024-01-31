@@ -386,13 +386,62 @@
 									</div>
 									
 									<div class="code_space code_desc">
-										상기 작성한 코드는 default 정렬 방식인 추천순으로 Mybatis를 통해 정렬하여 숙소 list를 가져오도록 하였습니다.
+										상기 작성한 코드는 default로 설정된 추천순 정렬방식으로 리뷰평점, 성급, 가격의 복합적인 정렬을 사용해서 Mybatis를 통해 숙소 list를 가져오도록 하였습니다.
 									</div>
 								</li>
 							</ul>
 							<ul class="second_cotent second_cotent_leading">
 								<li>
 									<div class="content">요금범위, 성급, 평점, 시설 유형, 편의시설/서비스의 <span class="highlight">필터를 적용하는 기능 구현</span></div>
+									
+									<div class="code_space">
+										<span class="comment">// java script</span>
+										<span class="comment">// 클릭한 체크박스의 호텔등급을 배열로 만들기</span>
+										<span class="tab0">$("input.lg_star").click(function(){</span>
+										<span class="tab1">var star_arr = [];</span>
+										<span class="tab1">var star = "";</span>
+										<span class="tab1">if($("input.lg_star:checked").length &gt; 0){</span>
+										<span class="tab2">for(var i=0; i&lt;$("input.lg_star:checked").length; i++){</span>
+										<span class="tab3">star_arr.push($("input.lg_star:checked").eq(i).val());</span>
+										<span class="tab2">}</span>
+										<span class="tab1">}</span>
+										<span class="tab1">star = star_arr.join(",");</span>
+										<span class="tab1">$("input[name='lg_star']").val(star);</span>
+										<br>
+										<span class="tab1">filter_search();</span>
+										<span class="tab0">});</span>
+									</div>
+									
+									<div class="code_space">
+										<span class="comment">// controller</span>
+										<span class="comment">// 성급</span>
+										<span class="tab0">if(request.getParameter("lg_star") == null) {</span>
+										<span class="tab1">paraMap.put("lg_star", "");</span>
+										<span class="tab0">}</span>
+										<span class="tab0">else {</span>
+										<span class="tab1">paraMap.put("lg_star", String.valueOf(request.getParameter("lg_star")));</span>
+										<span class="tab0">}</span>
+									</div>
+									
+									<div class="code_space">
+										<span class="comment">// Mybatis</span>
+										<span class="tab0">&lt;if test="lg_star_arr.length != 0"&gt;</span>
+									    <span class="tab1">and lg_hotel_star in</span>
+									    <span class="tab1">&lt;foreach collection="lg_star_arr" index="i" open="(" separator="," close=")"&gt;</span>
+									    <span class="tab2">'${lg_star_arr[i]}'</span>
+									    <span class="tab1">&lt;/foreach&gt;</span>
+									    <span class="tab0">&lt;/if&gt;</span>
+										<span class="tab0">&lt;if test="lodge_type_arr.length != 0"&gt;</span>
+									    <span class="tab1">and fk_lodge_type in</span>
+									    <span class="tab1">&lt;foreach collection="lodge_type_arr" index="i" open="(" separator="," close=")"&gt;</span>
+									    <span class="tab2">'${lodge_type_arr[i]}'</span>
+									    <span class="tab1">&lt;/foreach&gt;</span>
+									    <span class="tab0">&lt;/if&gt;</span>
+									</div>
+									
+									<div class="code_space code_desc">
+										체크박스의 성급 구분을 클릭시 마다 해당 성급(1개 이상)의 숙소 리스트가 조회될 수 있도록 개발하였습니다.
+									</div>
 								</li>
 							</ul>
 							
