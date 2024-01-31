@@ -226,8 +226,8 @@
 										<span class="tab0">if(lg_area_List != null) {</span>
 										<span class="tab1">for(Map&lt;String, String&gt; lg_area_map : lg_area_List) {</span>
 										<span class="tab2">JSONObject jsObj = new JSONObject();</span>
-										<span class="tab2">jsObj.put("lg_nation", "한국");<span class="comment"> // 국가</span></span>
-										<span class="tab2">jsObj.put("lg_area", lg_area_map.get("lg_area"));<span class="comment"> // 큰 도시</span></span>
+										<span class="tab2 key_code">jsObj.put("lg_nation", "한국");<span class="comment"> // 국가</span></span>
+										<span class="tab2 key_code">jsObj.put("lg_area", lg_area_map.get("lg_area"));<span class="comment"> // 큰 도시</span></span>
 										<br>
 										<span class="tab2">jsonArr.put(jsObj);</span>
 										<span class="tab1">}</span>
@@ -240,9 +240,9 @@
 										<span class="tab0">if(lg_area_2_List != null) {</span>
 										<span class="tab1">for(Map&lt;String, String&gt; lg_area_2_map : lg_area_2_List) {</span>
 										<span class="tab2">JSONObject jsObj = new JSONObject();</span>
-										<span class="tab2">jsObj.put("lg_nation", "한국");<span class="comment"> // 국가</span></span>
-										<span class="tab2">jsObj.put("lg_area", lg_area_2_map.get("lg_area"));<span class="comment"> // 큰 도시</span></span>
-										<span class="tab2">jsObj.put("lg_area_2", lg_area_2_map.get("lg_area_2"));<span class="comment"> // 상세 도시</span></span>
+										<span class="tab2 key_code">jsObj.put("lg_nation", "한국");<span class="comment"> // 국가</span></span>
+										<span class="tab2 key_code">jsObj.put("lg_area", lg_area_2_map.get("lg_area"));<span class="comment"> // 큰 도시</span></span>
+										<span class="tab2 key_code">jsObj.put("lg_area_2", lg_area_2_map.get("lg_area_2"));<span class="comment"> // 상세 도시</span></span>
 										<br>
 										<span class="tab2">jsonArr.put(jsObj);</span>
 										<span class="tab1">}</span>
@@ -426,7 +426,7 @@
 									</div>
 									
 									<div class="code_space code_desc">
-										체크박스의 성급 구분을 클릭시 마다 해당 성급(1개 이상)의 숙소 리스트가 조회될 수 있도록 개발하였습니다.
+										성급 체크박스를 클릭할 때마다 선택한 해당 성급(1개 이상)의 숙소 리스트가 조회될 수 있도록 하였습니다.
 									</div>
 								</li>
 							</ul>
