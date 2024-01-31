@@ -326,8 +326,7 @@
 										<span class="tab3">$("button.adult_cnt_minus").addClass("border","solid 1px lightgray");</span>
 										<span class="tab3">return;</span>
 										<span class="tab2">}</span>
-										<br>
-										<span class="tab2">// 어른 인원수와 아동 인원수의 합계가 10 이하인 경우 경고 숨김</span>
+										<span class="tab2 comment">// 어른 인원수와 아동 인원수의 합계가 10 이하인 경우 경고 숨김</span>
 										<span class="tab2">if(adult_cnt + kid_cnt &lt;= 10){</span>
 										<span class="tab3">$("div#travler_alert").text("");</span>
 										<span class="tab3">$("button[name='btn_travler']").attr("disabled", false);</span>
@@ -347,7 +346,7 @@
 									</div>
 									
 									<div class="code_space code_desc">
-										<div>인원수 설정의  예외처리 방식은 1~10명의 인원수를 선택해서 검색할 수 있도록 강제하였으며 최소 어른 1명이 포함될 수 있도록 설계하였습니다.</div>
+										<div>인원수 추가의 예외처리 방식으로는 1~10명의 인원수를 선택해서 검색할 수 있도록 설정하였으며 최소 어른 1명이 포함될 수 있도록 설계하였습니다.</div>
 									</div>
 								</li>
 							</ul>
